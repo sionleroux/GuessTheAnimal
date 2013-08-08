@@ -16,12 +16,13 @@
         android:textSize="12pt" />
 
     <Button
-        android:id="@+id/okbutton"
+        android:id="@+id/okButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/greetingText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:text="@string/button_ok" />
+        android:text="@string/button_ok"
+        android:onClick="guessAnAnimal" />
 
 </RelativeLayout>

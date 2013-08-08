@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Állat Barkóba</string>
+    <string name="action_help">Segítség</string>
+    <string name="greeting">Szia! Gondolj egy állatra és én megpróbálom kitalálni; nyomj Rendben-t ha kész vagy!</string>
+    <string name="button_ok">Rendben</string>
+    <string name="button_yes">Igen</string>
+    <string name="button_no">Nem</string>
+    
+</resources>

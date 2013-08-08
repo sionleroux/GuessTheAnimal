@@ -2,7 +2,10 @@ package org.sinisterstuf.guesstheanimal;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import org.sinisterstuf.guesstheanimal.Guess;
 
 public class Greeting extends Activity {
 
@@ -18,5 +21,11 @@ public class Greeting extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+	public void guessAnAnimal(View view) {
+		Intent intent = new Intent(this, Guess.class);
+		startActivity(intent);
+	}
+
     
 }
