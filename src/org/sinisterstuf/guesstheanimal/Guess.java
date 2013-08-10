@@ -1,6 +1,9 @@
 package org.sinisterstuf.guesstheanimal;
 
+import org.sinisterstuf.guesstheanimal.model.Animal;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -11,9 +14,12 @@ public class Guess extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.guess);
 		
+		Intent intent = getIntent();
+		Animal animal = (Animal) intent.getSerializableExtra("org.sinisterstuf.guesstheanimal.Animal");
+		
 		// write guess text
 		TextView guessText = (TextView)findViewById(R.id.guessText);
-		guessText.setText("This is my guess text...");
+		guessText.setText(animal.question);
 	}
 
 }

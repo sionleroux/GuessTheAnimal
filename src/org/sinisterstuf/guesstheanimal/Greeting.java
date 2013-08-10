@@ -5,9 +5,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+
 import org.sinisterstuf.guesstheanimal.Guess;
+import org.sinisterstuf.guesstheanimal.model.Animal;
 
 public class Greeting extends Activity {
+	
+	private static String ANIMAL = "org.sinisterstuf.guesstheanimal.Animal";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +27,9 @@ public class Greeting extends Activity {
     }
 
 	public void guessAnAnimal(View view) {
+		Animal firstAnimal = new Animal("a pig", "Does it have a curly tail?",  true);
 		Intent intent = new Intent(this, Guess.class);
+		intent.putExtra(ANIMAL, firstAnimal);
 		startActivity(intent);
 	}
 

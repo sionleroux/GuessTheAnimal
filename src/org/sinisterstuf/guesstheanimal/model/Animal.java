@@ -1,7 +1,11 @@
 package org.sinisterstuf.guesstheanimal.model;
 
-public class Animal {
+import java.io.Serializable;
+
+public class Animal implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	public String name;
 	public String question;
 	public Boolean answerWhenMe;
