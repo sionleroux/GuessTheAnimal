@@ -1,7 +1,5 @@
 package org.sinisterstuf.guesstheanimal;
 
-import org.sinisterstuf.guesstheanimal.model.Animal;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

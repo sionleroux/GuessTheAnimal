@@ -1,4 +1,4 @@
-package org.sinisterstuf.guesstheanimal.model;
+package org.sinisterstuf.guesstheanimal;
 
 import java.io.Serializable;
 

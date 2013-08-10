@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.View;
 
 import org.sinisterstuf.guesstheanimal.Guess;
-import org.sinisterstuf.guesstheanimal.model.Animal;
 
 public class Greeting extends Activity {
 	
