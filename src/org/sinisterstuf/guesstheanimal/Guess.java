@@ -27,14 +27,14 @@ public class Guess extends Activity {
 	 * Called when the user chooses Yes
 	 */
 	public void parseYes(View view) {
-		parseChoice(true);
+		parseChoice(true, animal.yesAnimal);
 	}
 
 	/**
 	 * Called when the user chooses No
 	 */
 	public void parseNo(View view) {
-		parseChoice(false);
+		parseChoice(false, animal.noAnimal);
 	}
 
 	/**
@@ -42,11 +42,15 @@ public class Guess extends Activity {
 	 * <code>Animal</code> from <code>Animal.answerWhenMe</code>
 	 * @param choice the user's choice
 	 */
-	private void parseChoice(boolean choice) {
+	private void parseChoice(boolean choice, Animal next) {
 		if (choice == animal.answerWhenMe) {
 			// they chose me!
 		} else {
-			// see if there's another animal...
+			if (next != null) {
+				// learn new animal
+			} else {
+				// guess next animal
+			}
 		}
 	}
 
