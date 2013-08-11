@@ -9,6 +9,11 @@ public class Animal implements Serializable {
 	 */
 	private static final long serialVersionUID = 2L;
 	
+	/**
+	 * String name for referring to this class when passing it with Intents.
+	 */
+	public static String ANIMAL = "org.sinisterstuf.guesstheanimal.Animal";
+
 	public String name;
 	public String question;
 	public Boolean answerWhenMe;

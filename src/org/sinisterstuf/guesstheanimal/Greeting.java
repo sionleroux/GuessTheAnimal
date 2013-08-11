@@ -10,8 +10,6 @@ import org.sinisterstuf.guesstheanimal.Guess;
 
 public class Greeting extends Activity {
 	
-	private static String ANIMAL = "org.sinisterstuf.guesstheanimal.Animal";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +26,8 @@ public class Greeting extends Activity {
 	public void guessAnAnimal(View view) {
 		Animal firstAnimal = new Animal("a pig", "Does it have a curly tail?",  true);
 		Intent intent = new Intent(this, Guess.class);
-		intent.putExtra(ANIMAL, firstAnimal);
+		intent.putExtra(Animal.ANIMAL, firstAnimal);
 		startActivity(intent);
 	}
 
-    
 }
