@@ -7,5 +7,6 @@
     <string name="button_ok">Rendben</string>
     <string name="button_yes">Igen</string>
     <string name="button_no">Nem</string>
+    <string name="final_guess">%s?</string>
     
 </resources>

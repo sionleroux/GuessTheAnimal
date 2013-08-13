@@ -9,6 +9,7 @@ import android.widget.TextView;
 public class Guess extends Activity {
 	
 	private Animal animal;
+	private static String FINAL_GUESS = "org.sinisterstuf.guesstheanimal.finalguess";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,11 +17,18 @@ public class Guess extends Activity {
 		setContentView(R.layout.guess);
 		
 		Intent intent = getIntent();
+		boolean finalGuess = (boolean) intent.getBooleanExtra(FINAL_GUESS, false);
 		animal = (Animal) intent.getSerializableExtra("org.sinisterstuf.guesstheanimal.Animal");
-		
-		// write guess text
 		TextView guessText = (TextView)findViewById(R.id.guessText);
-		guessText.setText(animal.question);
+
+		if (finalGuess) {
+			// write animal name
+			String finalGuessFormat = getString(R.string.final_guess);
+			guessText.setText(String.format(finalGuessFormat, animal.name));
+		} else {
+			// write question
+			guessText.setText(animal.question);
+		}
 	}
 	
 	/**
@@ -44,12 +52,18 @@ public class Guess extends Activity {
 	 */
 	private void parseChoice(boolean choice, Animal next) {
 		if (choice == animal.answerWhenMe) {
-			// they chose me!
+			Intent intent = new Intent(this, Guess.class);
+			intent.putExtra(Animal.ANIMAL, animal);
+			intent.putExtra(FINAL_GUESS, true);
+			startActivity(intent);
 		} else {
-			if (next != null) {
+			if (next == null) {
 				// learn new animal
 			} else {
-				// guess next animal
+				Intent intent = new Intent(this, Guess.class);
+				intent.putExtra(Animal.ANIMAL, next);
+				intent.putExtra(FINAL_GUESS, false);
+				startActivity(intent);
 			}
 		}
 	}
