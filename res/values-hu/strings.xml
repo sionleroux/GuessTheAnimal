@@ -8,5 +8,8 @@
     <string name="button_yes">Igen</string>
     <string name="button_no">Nem</string>
     <string name="final_guess">%s?</string>
+
+    <string name="end_win">Hurrá!</string>
+    <string name="end_challenge">Kész vagy egy új körre?</string>
     
 </resources>

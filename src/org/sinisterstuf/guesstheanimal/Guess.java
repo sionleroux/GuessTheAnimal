@@ -9,6 +9,7 @@ import android.widget.TextView;
 public class Guess extends Activity {
 	
 	private Animal animal;
+	boolean finalGuess;
 	private static String FINAL_GUESS = "org.sinisterstuf.guesstheanimal.finalguess";
 	
 	@Override
@@ -17,7 +18,7 @@ public class Guess extends Activity {
 		setContentView(R.layout.guess);
 		
 		Intent intent = getIntent();
-		boolean finalGuess = (boolean) intent.getBooleanExtra(FINAL_GUESS, false);
+		finalGuess = (boolean) intent.getBooleanExtra(FINAL_GUESS, false);
 		animal = (Animal) intent.getSerializableExtra("org.sinisterstuf.guesstheanimal.Animal");
 		TextView guessText = (TextView)findViewById(R.id.guessText);
 
@@ -35,7 +36,12 @@ public class Guess extends Activity {
 	 * Called when the user chooses Yes
 	 */
 	public void parseYes(View view) {
-		parseChoice(true, animal.yesAnimal);
+		if (finalGuess) {
+			Intent intent = new Intent(this, Win.class);
+			startActivity(intent);
+		} else {
+			parseChoice(true, animal.yesAnimal);
+		}
 	}
 
 	/**
