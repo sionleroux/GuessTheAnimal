@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Guess the Animal</string>
+    <string name="action_help">Help</string>
+
+    <string name="button_ok">OK</string>
+    <string name="button_yes">Ja</string>
+    <string name="button_no">Nee</string>
+
+    <string name="greeting">Haai! Dink aan \'n dier, dan sal ek dit probeer raai; druk OK wanneer jy gereed is!</string>
+    <string name="final_guess">Is dit %s?</string>
+
+    <string name="end_win">Hoera! Ek het dit gekry!</string>
+    <string name="end_lose">Dankie! Ek sal probeer om dit vir volgende keer te onthou.</string>
+    <string name="end_challenge">Is jy gereed vir nog \'n rondte?</string>
+
+    <string name="learn_name">Ek gee op! Aan watter dier dink jy?</string>
+    <string name="learn_name_ex">bv. \'n vark</string>
+    <string name="learn_question">O, ek het nog nie van %1$s gehoor nie. Watse vraag kan ek vra om tussen %2$s en %3$s te onderskei?</string>
+    <string name="learn_question_ex">bv. Het dit \'n krulstert?</string>
+    <string name="learn_yesno">Aha! So, vir %s, sal die antwoord ja wees, of nee?</string>
+    
+</resources>
