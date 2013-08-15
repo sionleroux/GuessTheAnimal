@@ -12,6 +12,7 @@
     <string name="final_guess">Is it %s?</string>
 
     <string name="end_win">Hooray! I got it!</string>
+    <string name="end_lose">Thank you! I\'ll remember that for next time.</string>
     <string name="end_challenge">Are you ready to play another round?</string>
     
 </resources>
