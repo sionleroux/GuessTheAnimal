@@ -15,4 +15,10 @@
     <string name="end_lose">Thank you! I\'ll remember that for next time.</string>
     <string name="end_challenge">Are you ready to play another round?</string>
     
+    <string name="learn_name">I give up! What animal are you thinking of?</string>
+    <string name="learn_name_ex">e.g. a pig</string>
+    <string name="learn_question">Oh, I\'ve never heard of %1$s before. What question can I ask to distinguish %2$s from %1$s?</string>
+    <string name="learn_question_ex">e.g. Does it have a curly tail?</string>
+    <string name="learn_yesno">I see! So, for %s, would the answer be yes or no?</string>
+
 </resources>
