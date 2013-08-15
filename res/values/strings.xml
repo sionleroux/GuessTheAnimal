@@ -3,12 +3,15 @@
 
     <string name="app_name">Guess the Animal</string>
     <string name="action_help">Help</string>
-    <string name="greeting">Hello! Think of an animal and I\'ll try and guess it; press OK when you\'re ready!</string>
+
     <string name="button_ok">OK</string>
     <string name="button_yes">Yes</string>
     <string name="button_no">No</string>
+
+    <string name="greeting">Hello! Think of an animal and I\'ll try and guess it; press OK when you\'re ready!</string>
     <string name="final_guess">Is it %s?</string>
+
     <string name="end_win">Hooray! I got it!</string>
     <string name="end_challenge">Are you ready to play another round?</string>
-
+    
 </resources>
