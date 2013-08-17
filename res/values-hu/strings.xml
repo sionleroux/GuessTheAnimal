@@ -17,7 +17,7 @@
 
     <string name="learn_name">Feladom! Melyik állatra gondoltál?</string>
     <string name="learn_name_ex">pl. disznó</string>
-    <string name="learn_question">Óh, még nem tudom, hogy mi az a %1$s. Milyen kérdést tehetek fel, hogy értsem a különbséget a %2$s és a %1$s között?</string>
+    <string name="learn_question">Óh, még nem tudom, hogy milyen egy %1$s. Milyen kérdést tehetek fel, hogy értsem a különbséget egy %2$s és egy %1$s között?</string>
     <string name="learn_question_ex">pl. Kurta farka van?</string>
     <string name="learn_yesno">Értem! Tehát, ha %s, akkor a válasz igen vagy nem?</string>
     
