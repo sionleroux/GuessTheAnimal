@@ -10,6 +10,7 @@ public class Guess extends Activity {
 	
 	private Animal animal;
 	boolean finalGuess;
+	boolean prevReq;
 	private static String FINAL_GUESS = "org.sinisterstuf.guesstheanimal.finalguess";
 	
 	@Override
@@ -19,6 +20,7 @@ public class Guess extends Activity {
 		
 		Intent intent = getIntent();
 		finalGuess = (boolean) intent.getBooleanExtra(FINAL_GUESS, false);
+		prevReq = (boolean)intent.getBooleanExtra(Animal.NEXT_REQ, false);
 		animal = (Animal) intent.getSerializableExtra("org.sinisterstuf.guesstheanimal.Animal");
 		TextView guessText = (TextView)findViewById(R.id.guessText);
 
@@ -48,7 +50,11 @@ public class Guess extends Activity {
 	 * Called when the user chooses No
 	 */
 	public void parseNo(View view) {
-		parseChoice(false, animal.noAnimal);
+		if (finalGuess) {
+			learnNewAnimal(prevReq);
+		} else {
+			parseChoice(false, animal.noAnimal);
+		}
 	}
 
 	/**
@@ -64,14 +70,25 @@ public class Guess extends Activity {
 			startActivity(intent);
 		} else {
 			if (next == null) {
-				// learn new animal
+				learnNewAnimal(choice);
 			} else {
 				Intent intent = new Intent(this, Guess.class);
 				intent.putExtra(Animal.ANIMAL, next);
+				intent.putExtra(Animal.NEXT_REQ, choice);
 				intent.putExtra(FINAL_GUESS, false);
 				startActivity(intent);
 			}
 		}
+	}
+	
+	/**
+	 * Start a new activity to learn an animal
+	 */
+	private void learnNewAnimal(Boolean nextReq) {
+		Intent intent = new Intent(this, LearnName.class);
+		intent.putExtra(Animal.ANIMAL, animal);
+		intent.putExtra(Animal.NEXT_REQ, nextReq);
+		startActivity(intent);
 	}
 
 }

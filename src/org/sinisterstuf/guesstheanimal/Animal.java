@@ -10,9 +10,13 @@ public class Animal implements Serializable {
 	private static final long serialVersionUID = 2L;
 	
 	/**
-	 * String name for referring to this class when passing it with Intents.
+	 * String name for referring to this class and its public fields
+	 * when passing it with Intents.
 	 */
-	public static String ANIMAL = "org.sinisterstuf.guesstheanimal.Animal";
+	public static final String ANIMAL = "org.sinisterstuf.guesstheanimal.Animal";
+	public static final String NAME = "org.sinisterstuf.guesstheanimal.Animal.name";
+	public static final String QUESTION = "org.sinisterstuf.guesstheanimal.Animal.question";
+	public static final String NEXT_REQ = "org.sinisterstuf.guesstheanimal.Animal.next_req";
 
 	public String name;
 	public String question;
