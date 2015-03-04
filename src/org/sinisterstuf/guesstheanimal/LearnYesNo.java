@@ -40,12 +40,23 @@ public class LearnYesNo extends Activity {
     
     private void learn(Boolean answerWhenMe) {
     	Animal next = new Animal(name, question, answerWhenMe);
+        next.prevAnimal = previous;
     	
     	if (prevReq) {
 			previous.yesAnimal = next;
 		} else {
 			previous.noAnimal = next;
 		}
+
+        // Save first animal in list to Game.firstAnimal
+        Animal first = next;
+        while (true) {
+            first = first.prevAnimal;
+            if (first.prevAnimal == null) {
+                break;
+            }
+        }
+        Game.firstAnimal = first;
     	
     	Intent intent = new Intent(this, Lose.class);
     	startActivity(intent);
