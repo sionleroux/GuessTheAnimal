@@ -26,6 +26,7 @@ public class Greeting extends Activity {
 	public void guessAnAnimal(View view) {
 		Animal firstAnimal = new Animal("a pig", "Does it have a curly tail?",  true);
 		firstAnimal.noAnimal = new Animal("a dog", "Does it have 4 legs?", true);
+		Game.firstAnimal = firstAnimal;
 		Intent intent = new Intent(this, Guess.class);
 		intent.putExtra(Animal.ANIMAL, firstAnimal);
 		intent.putExtra("org.sinisterstuf.guesstheanimal.finalguess", false);

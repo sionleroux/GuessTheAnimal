@@ -14,10 +14,8 @@ public class Win extends Activity {
 	}
 	
 	public void startNewGame(View view) {
-		Animal firstAnimal = new Animal("a pig", "Does it have a curly tail?",  true);
-		firstAnimal.noAnimal = new Animal("a dog", "Does it have 4 legs?", true);
 		Intent intent = new Intent(this, Guess.class);
-		intent.putExtra(Animal.ANIMAL, firstAnimal);
+		intent.putExtra(Animal.ANIMAL, Game.firstAnimal);
 		intent.putExtra("org.sinisterstuf.guesstheanimal.finalguess", false);
 		startActivity(intent);
 	}
