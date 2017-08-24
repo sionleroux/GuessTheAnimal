@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Állat Barkóba</string>
+    <string name="action_help">Segítség</string>
+
+    <string name="button_ok">Rendben</string>
+    <string name="button_yes">Igen</string>
+    <string name="button_no">Nem</string>
+
+    <string name="greeting">Szia! Gondolj egy állatra és én megpróbálom kitalálni; nyomj Rendben-t ha kész vagy!</string>
+    <string name="final_guess">%s?</string>
+
+    <string name="end_win">Hurrá! Kitaláltam!</string>
+    <string name="end_lose">Köszönöm! Legközelebb emlékezni fogok rá.</string>
+    <string name="end_challenge">Kész vagy egy új körre?</string>
+
+    <string name="learn_name">Feladom! Melyik állatra gondoltál?</string>
+    <string name="learn_name_ex">pl. disznó</string>
+    <string name="learn_question">Óh, még nem tudom, hogy milyen egy %1$s. Milyen kérdést tehetek fel, hogy értsem a különbséget egy %2$s és egy %1$s között?</string>
+    <string name="learn_question_ex">pl. Kurta farka van?</string>
+    <string name="learn_yesno">Értem! Tehát, ha %s, akkor a válasz igen vagy nem?</string>
+    
+</resources>
