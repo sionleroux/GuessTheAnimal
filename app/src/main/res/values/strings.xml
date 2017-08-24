@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Guess the Animal</string>
+    <string name="action_help">Help</string>
+
+    <string name="button_ok">OK</string>
+    <string name="button_yes">Yes</string>
+    <string name="button_no">No</string>
+
+    <string name="greeting">Hello! Think of an animal and I\'ll try and guess it; press OK when you\'re ready!</string>
+    <string name="final_guess">Is it %s?</string>
+
+    <string name="end_win">Hooray! I got it!</string>
+    <string name="end_lose">Thank you! I\'ll remember that for next time.</string>
+    <string name="end_challenge">Are you ready to play another round?</string>
+    
+    <string name="learn_name">I give up! What animal are you thinking of?</string>
+    <string name="learn_name_ex">e.g. a pig</string>
+    <string name="learn_question">Oh, I\'ve never heard of %1$s before. What question can I ask to distinguish %2$s from %1$s?</string>
+    <string name="learn_question_ex">e.g. Does it have a curly tail?</string>
+    <string name="learn_yesno">I see! So, for %s, would the answer be yes or no?</string>
+
+</resources>
