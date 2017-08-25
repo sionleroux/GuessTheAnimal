@@ -18,14 +18,12 @@
         android:id="@+id/yesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_yes"
-        android:onClick="parseYes" />
+        android:text="@string/button_yes" />
 
     <Button
         android:id="@+id/noButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_no"
-        android:onClick="parseNo" />
+        android:text="@string/button_no" />
 
 </LinearLayout>
