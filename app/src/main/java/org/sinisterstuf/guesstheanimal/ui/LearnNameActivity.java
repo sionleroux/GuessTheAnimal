@@ -1,14 +1,17 @@
-package org.sinisterstuf.guesstheanimal;
+package org.sinisterstuf.guesstheanimal.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import org.sinisterstuf.guesstheanimal.Animal;
+import org.sinisterstuf.guesstheanimal.R;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LearnName extends Activity {
+public class LearnNameActivity extends Activity {
 
     private Animal previous;
     private boolean prevReq;
@@ -27,7 +30,7 @@ public class LearnName extends Activity {
     public void learn() {
         EditText textInput = (EditText) findViewById(R.id.userInput);
         String name = textInput.getText().toString();
-        Intent intent = new Intent(this, LearnQuestion.class);
+        Intent intent = new Intent(this, LearnQuestionActivity.class);
         intent.putExtra(Animal.NAME, name);
         intent.putExtra(Animal.ANIMAL, previous);
         intent.putExtra(Animal.NEXT_REQ, prevReq);

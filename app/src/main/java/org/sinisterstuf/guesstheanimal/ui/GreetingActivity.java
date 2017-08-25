@@ -1,13 +1,17 @@
-package org.sinisterstuf.guesstheanimal;
+package org.sinisterstuf.guesstheanimal.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import org.sinisterstuf.guesstheanimal.Animal;
+import org.sinisterstuf.guesstheanimal.Game;
+import org.sinisterstuf.guesstheanimal.R;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Greeting extends Activity {
+public class GreetingActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +28,9 @@ public class Greeting extends Activity {
         // reverse-linked list traversal:
         firstAnimal.noAnimal.prevAnimal = firstAnimal;
         Game.firstAnimal = firstAnimal;
-        Intent intent = new Intent(this, Guess.class);
+        Intent intent = new Intent(this, GuessActivity.class);
         intent.putExtra(Animal.ANIMAL, firstAnimal);
-        intent.putExtra(Guess.FINAL_GUESS, false);
+        intent.putExtra(GuessActivity.FINAL_GUESS, false);
         startActivity(intent);
     }
 

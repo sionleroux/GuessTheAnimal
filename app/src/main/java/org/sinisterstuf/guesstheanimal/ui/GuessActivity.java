@@ -1,15 +1,18 @@
-package org.sinisterstuf.guesstheanimal;
+package org.sinisterstuf.guesstheanimal.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import org.sinisterstuf.guesstheanimal.Animal;
+import org.sinisterstuf.guesstheanimal.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Guess extends Activity {
+public class GuessActivity extends Activity {
 
     @BindView(R.id.guessText)
     TextView guessText;
@@ -43,7 +46,7 @@ public class Guess extends Activity {
     @OnClick(R.id.yesButton)
     public void parseYes() {
         if (finalGuess) {
-            Intent intent = new Intent(this, Win.class);
+            Intent intent = new Intent(this, WinActivity.class);
             startActivity(intent);
         } else {
             parseChoice(true, animal.yesAnimal);
@@ -67,7 +70,7 @@ public class Guess extends Activity {
      */
     private void parseChoice(boolean choice, Animal next) {
         if (choice == animal.answerWhenMe) {
-            Intent intent = new Intent(this, Guess.class);
+            Intent intent = new Intent(this, GuessActivity.class);
             intent.putExtra(Animal.ANIMAL, animal);
             intent.putExtra(FINAL_GUESS, true);
             startActivity(intent);
@@ -75,7 +78,7 @@ public class Guess extends Activity {
             if (next == null) {
                 learnNewAnimal(choice);
             } else {
-                Intent intent = new Intent(this, Guess.class);
+                Intent intent = new Intent(this, GuessActivity.class);
                 intent.putExtra(Animal.ANIMAL, next);
                 intent.putExtra(Animal.NEXT_REQ, choice);
                 intent.putExtra(FINAL_GUESS, false);
@@ -88,7 +91,7 @@ public class Guess extends Activity {
      * Start a new activity to learn an animal
      */
     private void learnNewAnimal(Boolean nextReq) {
-        Intent intent = new Intent(this, LearnName.class);
+        Intent intent = new Intent(this, LearnNameActivity.class);
         intent.putExtra(Animal.ANIMAL, animal);
         intent.putExtra(Animal.NEXT_REQ, nextReq);
         startActivity(intent);

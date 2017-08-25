@@ -1,15 +1,19 @@
-package org.sinisterstuf.guesstheanimal;
+package org.sinisterstuf.guesstheanimal.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import org.sinisterstuf.guesstheanimal.Animal;
+import org.sinisterstuf.guesstheanimal.Game;
+import org.sinisterstuf.guesstheanimal.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LearnYesNo extends Activity {
+public class LearnYesNoActivity extends Activity {
 
     @BindView(R.id.learnText)
     TextView learnText;
@@ -67,7 +71,7 @@ public class LearnYesNo extends Activity {
         }
         Game.firstAnimal = first;
 
-        Intent intent = new Intent(this, Lose.class);
+        Intent intent = new Intent(this, LoseActivity.class);
         startActivity(intent);
     }
 
