@@ -1,4 +1,6 @@
 # GuessTheAnimal
+[![Build Status](https://travis-ci.org/sinisterstuf/GuessTheAnimal.svg?branch=master)](https://travis-ci.org/sinisterstuf/GuessTheAnimal)
+
 An android game demonstrating a simple AI which learns to guess animals.
 
 This little project is my excuse to practise writing Android applications. The idea is simple enough. It's not a game as such, but rather an app that lets you train a very simple AI to guess animals by asking direct questions, like in the game "[20 questions](https://en.wikipedia.org/wiki/Twenty_Questions)".
