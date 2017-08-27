@@ -8,3 +8,11 @@ android:
     - android-25
 before_script:
   - bundle install && bundle exec danger
+deploy:
+  provider: releases
+  api_key:
+    secure: "ThZc677NIxeqBf/PxfVRXmeeq7FyyXq1cTP4uNZkCFXZQeDp+j85wjfNsatsgi2DqFAEPibG9NEk3bW1QnKT3fae24wWG9gwRLNkpHF3oB5ECIBeJXolqcOkivIw0q1hwSKV0WAscrRczA0Na0Qi3UMntKF8giJSmTv1saNEGLQpTOfMkkztURVbzs4Gg6kzn3qiUYszrY91TLNZix6X41boCG04JtvkP6v6B9JijaLTmSvioYYD3DH7moB0IKYQ1aSPA5aR/VjfuDRQAsjGc0F5izSW/IzXFlPyNl/Tmchk0OkEvHfHzPIJraFy0jgPB5SeaEyG/lhKHp2v44Is1G2zEGVjjndGknQ2KuiYq+AV+q8ljxoj1gfl9keEGCqH5obZVT3gC4qSJoHy6VDOjN7kxEGIwbvAuRnbUpKTeASqh9ni/xa14ulSKQelSVGR7odAUzLBwhcSMl4znT/G3pguMyjSFmX3Qhyy4Be5drsY9uBvbgvBWR0UZiYw5UuGCCAPOtXGH0WC83JO8FHSa+0B4cSCBUqK0IcmEcDK3BHEsgThBFpCUY6Rs1O4LluYVJ3qoQCKXy+SI5YUrEa8abhTw9BXiEWVh+uw9cwB+MDwd/+FwqRghR3jHxFd7Ie52EoypMcoFOzNamJ3LRPYUpLzJNZrVIb2hRit2qFM9bc="
+  file: "./app/build/outputs/apk/app-release-unsigned.apk"
+  skip_cleanup: true
+  on:
+    tags: true
