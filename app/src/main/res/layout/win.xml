@@ -4,11 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Win" >
+    android:padding="@dimen/padding_default"
+    tools:context=".ui.WinActivity" >
 
     <TextView
         android:id="@+id/winText"
@@ -29,7 +26,6 @@
         android:id="@+id/okButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_ok"
-        android:onClick="startNewGame" />
+        android:text="@string/button_ok" />
 
 </LinearLayout>
