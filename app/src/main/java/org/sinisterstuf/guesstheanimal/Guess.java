@@ -19,8 +19,8 @@ public class Guess extends Activity {
 		setContentView(R.layout.guess);
 		
 		Intent intent = getIntent();
-		finalGuess = (boolean) intent.getBooleanExtra(FINAL_GUESS, false);
-		prevReq = (boolean)intent.getBooleanExtra(Animal.NEXT_REQ, false);
+		finalGuess = intent.getBooleanExtra(FINAL_GUESS, false);
+		prevReq = intent.getBooleanExtra(Animal.NEXT_REQ, false);
 		animal = (Animal) intent.getSerializableExtra("org.sinisterstuf.guesstheanimal.Animal");
 		TextView guessText = (TextView)findViewById(R.id.guessText);
 

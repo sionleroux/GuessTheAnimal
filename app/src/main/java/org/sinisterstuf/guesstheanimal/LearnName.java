@@ -17,7 +17,7 @@ public class LearnName extends Activity {
         setContentView(R.layout.learn_name);
         Intent intent = getIntent();
         previous = (Animal)intent.getSerializableExtra(Animal.ANIMAL);
-        prevReq = (boolean)intent.getBooleanExtra(Animal.NEXT_REQ, false);
+        prevReq = intent.getBooleanExtra(Animal.NEXT_REQ, false);
     }
     
     public void learn(View view) {
