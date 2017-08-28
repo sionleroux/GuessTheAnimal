@@ -16,7 +16,7 @@ public class Lose extends Activity {
 	public void startNewGame(View view) {
 		Intent intent = new Intent(this, Guess.class);
 		intent.putExtra(Animal.ANIMAL, Game.firstAnimal);
-		intent.putExtra("org.sinisterstuf.guesstheanimal.finalguess", false);
+		intent.putExtra(Guess.FINAL_GUESS, false);
 		startActivity(intent);
 	}
 
