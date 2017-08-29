@@ -1,11 +1,15 @@
-package org.sinisterstuf.guesstheanimal;
+package org.sinisterstuf.guesstheanimal.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class Win extends Activity {
+import org.sinisterstuf.guesstheanimal.Animal;
+import org.sinisterstuf.guesstheanimal.Game;
+import org.sinisterstuf.guesstheanimal.R;
+
+public class WinActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -14,9 +18,9 @@ public class Win extends Activity {
 	}
 	
 	public void startNewGame(View view) {
-		Intent intent = new Intent(this, Guess.class);
+		Intent intent = new Intent(this, GuessActivity.class);
 		intent.putExtra(Animal.ANIMAL, Game.firstAnimal);
-		intent.putExtra(Guess.FINAL_GUESS, false);
+		intent.putExtra(GuessActivity.FINAL_GUESS, false);
 		startActivity(intent);
 	}
 
