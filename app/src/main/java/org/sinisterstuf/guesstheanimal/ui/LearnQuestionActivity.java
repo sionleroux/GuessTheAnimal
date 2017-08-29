@@ -1,4 +1,4 @@
-package org.sinisterstuf.guesstheanimal;
+package org.sinisterstuf.guesstheanimal.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class LearnQuestion extends Activity {
+import org.sinisterstuf.guesstheanimal.Animal;
+import org.sinisterstuf.guesstheanimal.R;
+
+public class LearnQuestionActivity extends Activity {
 	
 	private Animal previous;
 	private boolean prevReq;
@@ -33,7 +36,7 @@ public class LearnQuestion extends Activity {
     public void learn(View view) {
     	EditText textInput = (EditText)findViewById(R.id.userInput);
     	String question = textInput.getText().toString();
-    	Intent intent = new Intent(this, LearnYesNo.class);
+    	Intent intent = new Intent(this, LearnYesNoActivity.class);
     	intent.putExtra(Animal.ANIMAL, previous);
     	intent.putExtra(Animal.NEXT_REQ, prevReq);
     	intent.putExtra(Animal.NAME, name);

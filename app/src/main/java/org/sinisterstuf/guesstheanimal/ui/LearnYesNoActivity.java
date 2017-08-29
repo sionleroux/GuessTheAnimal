@@ -1,4 +1,4 @@
-package org.sinisterstuf.guesstheanimal;
+package org.sinisterstuf.guesstheanimal.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class LearnYesNo extends Activity {
+import org.sinisterstuf.guesstheanimal.Animal;
+import org.sinisterstuf.guesstheanimal.Game;
+import org.sinisterstuf.guesstheanimal.R;
+
+public class LearnYesNoActivity extends Activity {
 	private Animal previous;
 	private String name;
 	private String question;
@@ -58,7 +62,7 @@ public class LearnYesNo extends Activity {
         }
         Game.firstAnimal = first;
     	
-    	Intent intent = new Intent(this, Lose.class);
+    	Intent intent = new Intent(this, LoseActivity.class);
     	startActivity(intent);
     }
 

@@ -1,4 +1,4 @@
-package org.sinisterstuf.guesstheanimal;
+package org.sinisterstuf.guesstheanimal.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class Guess extends Activity {
+import org.sinisterstuf.guesstheanimal.Animal;
+import org.sinisterstuf.guesstheanimal.R;
+
+public class GuessActivity extends Activity {
 	
 	private Animal animal;
 	boolean finalGuess;
@@ -39,7 +42,7 @@ public class Guess extends Activity {
 	 */
 	public void parseYes(View view) {
 		if (finalGuess) {
-			Intent intent = new Intent(this, Win.class);
+			Intent intent = new Intent(this, WinActivity.class);
 			startActivity(intent);
 		} else {
 			parseChoice(true, animal.yesAnimal);
@@ -64,7 +67,7 @@ public class Guess extends Activity {
 	 */
 	private void parseChoice(boolean choice, Animal next) {
 		if (choice == animal.answerWhenMe) {
-			Intent intent = new Intent(this, Guess.class);
+			Intent intent = new Intent(this, GuessActivity.class);
 			intent.putExtra(Animal.ANIMAL, animal);
 			intent.putExtra(FINAL_GUESS, true);
 			startActivity(intent);
@@ -72,7 +75,7 @@ public class Guess extends Activity {
 			if (next == null) {
 				learnNewAnimal(choice);
 			} else {
-				Intent intent = new Intent(this, Guess.class);
+				Intent intent = new Intent(this, GuessActivity.class);
 				intent.putExtra(Animal.ANIMAL, next);
 				intent.putExtra(Animal.NEXT_REQ, choice);
 				intent.putExtra(FINAL_GUESS, false);
@@ -85,7 +88,7 @@ public class Guess extends Activity {
 	 * Start a new activity to learn an animal
 	 */
 	private void learnNewAnimal(Boolean nextReq) {
-		Intent intent = new Intent(this, LearnName.class);
+		Intent intent = new Intent(this, LearnNameActivity.class);
 		intent.putExtra(Animal.ANIMAL, animal);
 		intent.putExtra(Animal.NEXT_REQ, nextReq);
 		startActivity(intent);
