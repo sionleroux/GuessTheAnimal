@@ -11,7 +11,7 @@ public class Guess extends Activity {
 	private Animal animal;
 	boolean finalGuess;
 	boolean prevReq;
-	private static String FINAL_GUESS = "org.sinisterstuf.guesstheanimal.finalguess";
+	public static final String FINAL_GUESS = "org.sinisterstuf.guesstheanimal.finalguess";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

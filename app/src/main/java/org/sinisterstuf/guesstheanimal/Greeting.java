@@ -22,7 +22,7 @@ public class Greeting extends Activity {
 		Game.firstAnimal = firstAnimal;
 		Intent intent = new Intent(this, Guess.class);
 		intent.putExtra(Animal.ANIMAL, firstAnimal);
-		intent.putExtra("org.sinisterstuf.guesstheanimal.finalguess", false);
+		intent.putExtra(Guess.FINAL_GUESS, false);
 		startActivity(intent);
 	}
 
