@@ -4,7 +4,6 @@ if git.commits.any? { |c| c.message =~ /^Merge branch 'master'/ }
 end
 
 # Linting
-android_lint.lint
 commit_lint.check
 todoist.warn_for_todos
 
