@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.sinisterstuf.guesstheanimal"
-    android:versionCode="1"
-    android:versionName="1.0" android:installLocation="preferExternal">
+    android:installLocation="preferExternal">
 
     <application
         android:allowBackup="true"
+        android:allowClearUserData="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" android:allowClearUserData="true">
+        android:theme="@style/AppTheme">
         <activity
             android:name="org.sinisterstuf.guesstheanimal.Greeting"
             android:label="@string/app_name" >
@@ -18,12 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="Guess" android:label="@string/app_name"></activity>
-        <activity android:name="Win" android:label="@string/app_name"></activity>
-        <activity android:name="Lose" android:label="@string/app_name"></activity>
-        <activity android:name="LearnName" android:label="@string/app_name"></activity>
-        <activity android:name="LearnQuestion" android:label="@string/app_name"></activity>
-        <activity android:name="LearnYesNo" android:label="@string/app_name"></activity>
+
+        <activity android:name="Guess"/>
+        <activity android:name="Win"/>
+        <activity android:name="Lose"/>
+        <activity android:name="LearnName"/>
+        <activity android:name="LearnQuestion"/>
+        <activity android:name="LearnYesNo"/>
+        
     </application>
 
 </manifest>

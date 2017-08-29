@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Állat Barkóba</string>
-    <string name="action_help">Segítség</string>
 
     <string name="button_ok">Rendben</string>
     <string name="button_yes">Igen</string>

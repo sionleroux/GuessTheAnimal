@@ -2,7 +2,6 @@
 <resources>
     
     <string name="app_name">Gissa djuret</string>
-    <string name="action_help">Hjälp</string>
 
     <string name="button_ok">OK</string>
     <string name="button_yes">Ja</string>
