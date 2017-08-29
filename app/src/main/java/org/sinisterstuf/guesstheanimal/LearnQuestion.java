@@ -20,7 +20,7 @@ public class LearnQuestion extends Activity {
 
         Intent intent = getIntent();
         previous = (Animal)intent.getSerializableExtra(Animal.ANIMAL);
-        prevReq = (boolean)intent.getBooleanExtra(Animal.NEXT_REQ, false);
+        prevReq = intent.getBooleanExtra(Animal.NEXT_REQ, false);
         name = intent.getStringExtra(Animal.NAME);
         
         // set the text
