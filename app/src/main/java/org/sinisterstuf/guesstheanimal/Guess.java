@@ -21,7 +21,7 @@ public class Guess extends Activity {
 		Intent intent = getIntent();
 		finalGuess = intent.getBooleanExtra(FINAL_GUESS, false);
 		prevReq = intent.getBooleanExtra(Animal.NEXT_REQ, false);
-		animal = (Animal) intent.getSerializableExtra("org.sinisterstuf.guesstheanimal.Animal");
+		animal = (Animal) intent.getSerializableExtra(Animal.ANIMAL);
 		TextView guessText = (TextView)findViewById(R.id.guessText);
 
 		if (finalGuess) {
