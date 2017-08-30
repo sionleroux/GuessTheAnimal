@@ -19,5 +19,8 @@
     <string name="learn_question">Óh, még nem tudom, hogy milyen egy %1$s. Milyen kérdést tehetek fel, hogy értsem a különbséget egy %2$s és egy %1$s között?</string>
     <string name="learn_question_ex">pl. Kurta farka van?</string>
     <string name="learn_yesno">Értem! Tehát, ha %s, akkor a válasz igen vagy nem?</string>
-    
+
+    <string name="missing_name">Nem adtál nevet az állatnak!</string>
+    <string name="missing_question">Nem írtál kérdést!</string>
+
 </resources>

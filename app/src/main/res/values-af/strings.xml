@@ -19,5 +19,8 @@
     <string name="learn_question">O, ek het nog nie van %1$s gehoor nie. Watse vraag kan ek vra om tussen %2$s en %3$s te onderskei?</string>
     <string name="learn_question_ex">bv. Het dit \'n krulstert?</string>
     <string name="learn_yesno">Aha! So, vir %s, sal die antwoord ja wees, of nee?</string>
-    
+
+    <string name="missing_name">Jy het nie vir jou dier \'n naam gegee nie!</string>
+    <string name="missing_question">Jy het nie a vraag gesrkyf nie!</string>
+
 </resources>

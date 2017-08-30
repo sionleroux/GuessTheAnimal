@@ -43,13 +43,17 @@ public class LearnQuestionActivity extends Activity {
 
 	@OnClick(R.id.okButton)
 	public void learn() {
-		String question = userInput.getText().toString();
-		Intent intent = new Intent(this, LearnYesNoActivity.class);
-		intent.putExtra(Animal.ANIMAL, previous);
-		intent.putExtra(Animal.NEXT_REQ, prevReq);
-		intent.putExtra(Animal.NAME, name);
-		intent.putExtra(Animal.QUESTION, question);
-		startActivity(intent);
+		if(userInput.getText().toString().trim().equals("")) {
+			userInput.setError(getString(R.string.missing_question));
+		} else {
+			String question = userInput.getText().toString();
+			Intent intent = new Intent(this, LearnYesNoActivity.class);
+			intent.putExtra(Animal.ANIMAL, previous);
+			intent.putExtra(Animal.NEXT_REQ, prevReq);
+			intent.putExtra(Animal.NAME, name);
+			intent.putExtra(Animal.QUESTION, question);
+			startActivity(intent);
+		}
 	}
 
 }

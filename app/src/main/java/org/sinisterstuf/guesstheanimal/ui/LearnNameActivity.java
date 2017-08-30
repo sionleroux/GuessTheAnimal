@@ -33,11 +33,15 @@ public class LearnNameActivity extends Activity {
 	@OnClick(R.id.okButton)
 	public void learn() {
 		String name = userInput.getText().toString();
-		Intent intent = new Intent(this, LearnQuestionActivity.class);
-		intent.putExtra(Animal.NAME, name);
-		intent.putExtra(Animal.ANIMAL, previous);
-		intent.putExtra(Animal.NEXT_REQ, prevReq);
-		startActivity(intent);
+		if(userInput.getText().toString().trim().equals("")) {
+			userInput.setError(getString(R.string.missing_name));
+		} else {
+			Intent intent = new Intent(this, LearnQuestionActivity.class);
+			intent.putExtra(Animal.NAME, name);
+			intent.putExtra(Animal.ANIMAL, previous);
+			intent.putExtra(Animal.NEXT_REQ, prevReq);
+			startActivity(intent);
+		}
 	}
 
 }
