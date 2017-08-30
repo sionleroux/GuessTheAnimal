@@ -3,29 +3,35 @@ package org.sinisterstuf.guesstheanimal.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import org.sinisterstuf.guesstheanimal.Animal;
 import org.sinisterstuf.guesstheanimal.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class GuessActivity extends Activity {
-	
+
+	@BindView(R.id.guessText)
+	TextView guessText;
+
 	private Animal animal;
 	boolean finalGuess;
 	boolean prevReq;
 	public static final String FINAL_GUESS = "org.sinisterstuf.guesstheanimal.finalguess";
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.guess);
-		
+		ButterKnife.bind(this);
+
 		Intent intent = getIntent();
 		finalGuess = intent.getBooleanExtra(FINAL_GUESS, false);
 		prevReq = intent.getBooleanExtra(Animal.NEXT_REQ, false);
 		animal = (Animal) intent.getSerializableExtra(Animal.ANIMAL);
-		TextView guessText = (TextView)findViewById(R.id.guessText);
 
 		if (finalGuess) {
 			// write animal name
@@ -36,11 +42,12 @@ public class GuessActivity extends Activity {
 			guessText.setText(animal.question);
 		}
 	}
-	
+
 	/**
 	 * Called when the user chooses Yes
 	 */
-	public void parseYes(View view) {
+	@OnClick(R.id.yesButton)
+	public void parseYes() {
 		if (finalGuess) {
 			Intent intent = new Intent(this, WinActivity.class);
 			startActivity(intent);
@@ -52,7 +59,8 @@ public class GuessActivity extends Activity {
 	/**
 	 * Called when the user chooses No
 	 */
-	public void parseNo(View view) {
+	@OnClick(R.id.noButton)
+	public void parseNo() {
 		if (finalGuess) {
 			learnNewAnimal(prevReq);
 		} else {
@@ -63,6 +71,7 @@ public class GuessActivity extends Activity {
 	/**
 	 * Compares the user's <code>choice</code> to the desired answer for this
 	 * <code>Animal</code> from <code>Animal.answerWhenMe</code>
+	 *
 	 * @param choice the user's choice
 	 */
 	private void parseChoice(boolean choice, Animal next) {
@@ -83,7 +92,7 @@ public class GuessActivity extends Activity {
 			}
 		}
 	}
-	
+
 	/**
 	 * Start a new activity to learn an animal
 	 */
