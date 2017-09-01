@@ -13,3 +13,30 @@ allprojects {
         jcenter()
     }
 }
+
+ext {
+    configuration = [
+            applicationId: "org.sinisterstuf.guesstheanimal",
+            buildToolsVersion: "25.0.2",
+            compileSdkVersion: 25,
+            minSdkVersion: 9,
+            targetSdkVersion: 25,
+            versionCodeMajor: 0,
+            versionCodeMinor: 0,
+            versionCodePatch: 1
+    ]
+
+    // Support
+    supportLibraryVersion = "25.3.1"
+
+    // UI
+    butterKnifeVersion = "8.5.1"
+}
+
+def computeVersionCode() {
+    return configuration.versionCodeMajor * 100 + configuration.versionCodeMinor * 10 + configuration.versionCodePatch
+}
+
+def computeVersionName() {
+    return "$configuration.versionCodeMajor.$configuration.versionCodeMinor.$configuration.versionCodePatch"
+}
