@@ -28,10 +28,8 @@ public class GreetingActivity extends Activity {
 		// reverse-linked list traversal:
 		firstAnimal.noAnimal.prevAnimal = firstAnimal;
 		Game.firstAnimal = firstAnimal;
-		Intent intent = new Intent(this, GuessActivity.class);
-		intent.putExtra(Animal.ANIMAL, firstAnimal);
-		intent.putExtra(GuessActivity.FINAL_GUESS, false);
-		startActivity(intent);
+
+		GuessActivity.start(this, firstAnimal, false, false);
 	}
 
 }
