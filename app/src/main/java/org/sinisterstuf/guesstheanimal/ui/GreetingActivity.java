@@ -22,9 +22,9 @@ public class GreetingActivity extends Activity {
 
 	@OnClick(R.id.okButton)
 	public void guessAnAnimal() {
-		Animal firstAnimal = new Animal("a pig", "Does it have a curly tail?", true);
+		Animal firstAnimal = new Animal(getResources().getString(R.string.a_pig), getResources().getString(R.string.pig_question), true);
 		firstAnimal.prevAnimal = null;
-		firstAnimal.noAnimal = new Animal("a dog", "Does it have 4 legs?", true);
+		firstAnimal.noAnimal = new Animal(getResources().getString(R.string.a_dog), getResources().getString(R.string.dog_question), true);
 		// reverse-linked list traversal:
 		firstAnimal.noAnimal.prevAnimal = firstAnimal;
 		Game.firstAnimal = firstAnimal;
