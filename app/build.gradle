@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.configuration.compileSdkVersion
-    buildToolsVersion rootProject.configuration.buildToolsVersion
 
     defaultConfig {
         applicationId rootProject.configuration.applicationId
