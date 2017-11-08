@@ -23,7 +23,7 @@ ext {
             targetSdkVersion: 25,
             versionCodeMajor: 0,
             versionCodeMinor: 0,
-            versionCodePatch: 2
+            versionCodePatch: 3
     ]
 
     // Support
