@@ -21,6 +21,7 @@ android {
 
 dependencies {
     compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
 
     // UI Related
     compile "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
