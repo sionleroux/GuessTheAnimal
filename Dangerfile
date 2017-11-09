@@ -6,7 +6,3 @@ end
 # Linting
 commit_lint.check
 todoist.warn_for_todos
-
-# # Coverage
-# require 'coveralls'
-# Coveralls.wear!
