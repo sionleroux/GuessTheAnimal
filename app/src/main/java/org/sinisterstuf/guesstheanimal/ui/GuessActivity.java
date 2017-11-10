@@ -25,18 +25,16 @@ public class GuessActivity extends Activity {
 	private boolean finalGuess;
 	private boolean prevReq;
 
-
-	/**
-	 * Displays the GuessActivity screen
-	 */
 	public static void start(Context context, Animal animal, boolean isFinalGuess, boolean prevReq) {
-		// PREVREQ should be optional because it is used only in 1 place.
-		// Koltin -> https://kotlinlang.org/docs/reference/functions.html#default-arguments
 		Intent intent = new Intent(context, GuessActivity.class);
 		intent.putExtra(Animal.ANIMAL, animal);
 		intent.putExtra(FINAL_GUESS, isFinalGuess);
 		intent.putExtra(Animal.NEXT_REQ, prevReq);
 		context.startActivity(intent);
+	}
+
+	public static void start(Context context) {
+		start(context, Game.firstAnimal, false, false);
 	}
 
 	@Override

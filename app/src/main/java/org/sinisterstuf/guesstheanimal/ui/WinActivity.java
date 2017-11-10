@@ -22,7 +22,7 @@ public class WinActivity extends Activity {
 
 	@OnClick(R.id.okButton)
 	public void startNewGame() {
-		GuessActivity.start(this, Game.firstAnimal, false, false);
+		GuessActivity.start(this);
 	}
 
 }
