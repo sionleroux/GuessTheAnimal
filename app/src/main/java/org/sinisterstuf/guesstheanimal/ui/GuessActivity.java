@@ -72,7 +72,7 @@ public class GuessActivity extends Activity {
 	@OnClick(R.id.noButton)
 	public void parseNo() {
 		if (finalGuess) {
-			learnNewAnimal();
+			learnNewAnimal(prevReq);
 		} else {
 			parseChoice(false, animal.noAnimal);
 		}
@@ -83,7 +83,7 @@ public class GuessActivity extends Activity {
 			GuessActivity.start(this, animal, true, false);
 		} else {
 			if (next == null) {
-				learnNewAnimal();
+				learnNewAnimal(choice);
 			} else {
 				GuessActivity.start(this, next, false, choice);
 			}
@@ -93,10 +93,10 @@ public class GuessActivity extends Activity {
 	/**
 	 * Start a new activity to learn an animal
 	 */
-	private void learnNewAnimal() {
+	private void learnNewAnimal(Boolean nextReq) {
 		Intent intent = new Intent(this, LearnNameActivity.class);
 		intent.putExtra(Animal.ANIMAL, animal);
-		intent.putExtra(Animal.NEXT_REQ, prevReq);
+		intent.putExtra(Animal.NEXT_REQ, nextReq);
 		startActivity(intent);
 	}
 

@@ -28,7 +28,6 @@ public class GreetingActivity extends Activity {
 		// reverse-linked list traversal:
 		firstAnimal.noAnimal.prevAnimal = firstAnimal;
 		Game.firstAnimal = firstAnimal;
-
 		GuessActivity.start(this, firstAnimal, false, false);
 	}
 
