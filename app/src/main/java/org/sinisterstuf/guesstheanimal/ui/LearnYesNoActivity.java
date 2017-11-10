@@ -1,26 +1,19 @@
 package org.sinisterstuf.guesstheanimal.ui;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import org.sinisterstuf.guesstheanimal.Animal;
 import org.sinisterstuf.guesstheanimal.Game;
 import org.sinisterstuf.guesstheanimal.R;
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LearnYesNoActivity extends Activity {
-
-	private static final String TAG = "AnimalLearnYesNo";
 
 	@BindView(R.id.learnText)
 	TextView learnText;
@@ -77,20 +70,7 @@ public class LearnYesNoActivity extends Activity {
 			}
 		}
 		Game.firstAnimal = first;
-
-		// Persist learnt animals to file
-		String filename = "animals";
-		FileOutputStream fileOut;
-		ObjectOutputStream objectOut;
-		try {
-			fileOut = openFileOutput(filename, Context.MODE_PRIVATE);
-			objectOut = new ObjectOutputStream(fileOut);
-			objectOut.writeObject(Game.firstAnimal);
-			objectOut.close();
-		} catch (java.io.IOException e) {
-			Log.wtf(TAG, "guessAnAnimal: internal file should always be writeable", e);
-		}
-
+		Game.save(this);
 
 		Intent intent = new Intent(this, LoseActivity.class);
 		startActivity(intent);
