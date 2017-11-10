@@ -22,10 +22,7 @@ public class LoseActivity extends Activity {
 
 	@OnClick(R.id.okButton)
 	public void startNewGame() {
-		Intent intent = new Intent(this, GuessActivity.class);
-		intent.putExtra(Animal.ANIMAL, Game.firstAnimal);
-		intent.putExtra(GuessActivity.FINAL_GUESS, false);
-		startActivity(intent);
+		GuessActivity.start(this);
 	}
 
 }

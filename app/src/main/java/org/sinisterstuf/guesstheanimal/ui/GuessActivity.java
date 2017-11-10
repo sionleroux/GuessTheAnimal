@@ -1,11 +1,13 @@
 package org.sinisterstuf.guesstheanimal.ui;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import org.sinisterstuf.guesstheanimal.Animal;
+import org.sinisterstuf.guesstheanimal.Game;
 import org.sinisterstuf.guesstheanimal.R;
 
 import butterknife.BindView;
@@ -14,13 +16,26 @@ import butterknife.OnClick;
 
 public class GuessActivity extends Activity {
 
+	public static final String FINAL_GUESS = "org.sinisterstuf.guesstheanimal.finalguess";
+
 	@BindView(R.id.guessText)
 	TextView guessText;
 
 	private Animal animal;
-	boolean finalGuess;
-	boolean prevReq;
-	public static final String FINAL_GUESS = "org.sinisterstuf.guesstheanimal.finalguess";
+	private boolean finalGuess;
+	private boolean prevReq;
+
+	public static void start(Context context, Animal animal, boolean isFinalGuess, boolean prevReq) {
+		Intent intent = new Intent(context, GuessActivity.class);
+		intent.putExtra(Animal.ANIMAL, animal);
+		intent.putExtra(FINAL_GUESS, isFinalGuess);
+		intent.putExtra(Animal.NEXT_REQ, prevReq);
+		context.startActivity(intent);
+	}
+
+	public static void start(Context context) {
+		start(context, Game.firstAnimal, false, false);
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +43,9 @@ public class GuessActivity extends Activity {
 		setContentView(R.layout.guess);
 		ButterKnife.bind(this);
 
-		Intent intent = getIntent();
-		finalGuess = intent.getBooleanExtra(FINAL_GUESS, false);
-		prevReq = intent.getBooleanExtra(Animal.NEXT_REQ, false);
-		animal = (Animal) intent.getSerializableExtra(Animal.ANIMAL);
+		finalGuess = getIntent().getBooleanExtra(FINAL_GUESS, false);
+		prevReq = getIntent().getBooleanExtra(Animal.NEXT_REQ, false);
+		animal = (Animal) getIntent().getSerializableExtra(Animal.ANIMAL);
 
 		if (finalGuess) {
 			// write animal name
@@ -43,9 +57,6 @@ public class GuessActivity extends Activity {
 		}
 	}
 
-	/**
-	 * Called when the user chooses Yes
-	 */
 	@OnClick(R.id.yesButton)
 	public void parseYes() {
 		if (finalGuess) {
@@ -56,9 +67,6 @@ public class GuessActivity extends Activity {
 		}
 	}
 
-	/**
-	 * Called when the user chooses No
-	 */
 	@OnClick(R.id.noButton)
 	public void parseNo() {
 		if (finalGuess) {
@@ -68,27 +76,14 @@ public class GuessActivity extends Activity {
 		}
 	}
 
-	/**
-	 * Compares the user's <code>choice</code> to the desired answer for this
-	 * <code>Animal</code> from <code>Animal.answerWhenMe</code>
-	 *
-	 * @param choice the user's choice
-	 */
 	private void parseChoice(boolean choice, Animal next) {
 		if (choice == animal.answerWhenMe) {
-			Intent intent = new Intent(this, GuessActivity.class);
-			intent.putExtra(Animal.ANIMAL, animal);
-			intent.putExtra(FINAL_GUESS, true);
-			startActivity(intent);
+			GuessActivity.start(this, animal, true, false);
 		} else {
 			if (next == null) {
 				learnNewAnimal(choice);
 			} else {
-				Intent intent = new Intent(this, GuessActivity.class);
-				intent.putExtra(Animal.ANIMAL, next);
-				intent.putExtra(Animal.NEXT_REQ, choice);
-				intent.putExtra(FINAL_GUESS, false);
-				startActivity(intent);
+				GuessActivity.start(this, next, false, choice);
 			}
 		}
 	}
