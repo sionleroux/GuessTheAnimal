@@ -23,4 +23,10 @@
     <string name="missing_name">You didn\'t give your animal a name!</string>
     <string name="missing_question">You didn\'t write a question!</string>
 
+    <string name="dog">a dog"</string>
+    <string name="dog_question">Does it have 4 legs?</string>
+
+    <string name="pig">a pig"</string>
+    <string name="pig_question">Does it have a curly tail?</string>
+
 </resources>

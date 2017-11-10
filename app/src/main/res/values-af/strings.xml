@@ -23,4 +23,10 @@
     <string name="missing_name">Jy het nie vir jou dier \'n naam gegee nie!</string>
     <string name="missing_question">Jy het nie a vraag gesrkyf nie!</string>
 
+    <string name="dog">\'n hond</string>
+    <string name="dog_question">Het dit 4 bene?</string>
+
+    <string name="pig">\'n vark</string>
+    <string name="pig_question">Het dit \'n krulstert?</string>
+
 </resources>

@@ -44,11 +44,17 @@ public class GreetingActivity extends Activity {
 			}
 		} else {
 			// create example first animal
-			firstAnimal = new Animal("a pig", "Does it have a curly tail?", true);
-			firstAnimal.prevAnimal = null;
-			firstAnimal.noAnimal = new Animal("a dog", "Does it have 4 legs?", true);
+			firstAnimal = new Animal(
+					getString(R.string.pig),
+					getString(R.string.pig_question),
+					true);
+			firstAnimal.noAnimal = new Animal(
+					getString(R.string.dog),
+					getString(R.string.dog_question),
+					true);
 			// reverse-linked list traversal:
 			firstAnimal.noAnimal.prevAnimal = firstAnimal;
+			firstAnimal.prevAnimal = null;
 		}
 		Game.firstAnimal = firstAnimal;
 		GuessActivity.start(this);

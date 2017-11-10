@@ -23,4 +23,10 @@
     <string name="missing_name">Nem adtál nevet az állatnak!</string>
     <string name="missing_question">Nem írtál kérdést!</string>
 
+    <string name="dog">kutya</string>
+    <string name="dog_question">4 lába van?</string>
+
+    <string name="pig">disznó</string>
+    <string name="pig_question">Kurta farka van?</string>
+
 </resources>
